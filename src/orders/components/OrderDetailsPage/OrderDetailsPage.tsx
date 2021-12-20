@@ -321,7 +321,7 @@ const OrderDetailsPage: React.FC<OrderDetailsPageProps> = props => {
                     <CardSpacer />
                   </>
                 )}
-                <OrderCustomerNote note={maybe(() => order.customerNote)} />
+                <OrderCustomerNote note={maybe(() => order.metadata.find(el => el.key === 'Notes').value || '')} />
               </div>
             </Grid>
             <Savebar
